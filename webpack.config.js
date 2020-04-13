@@ -39,7 +39,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
 
-      title: 'PROJECT-TITLE',
+      title: 'coin-counter',
 
       template: './src/index.html',
 

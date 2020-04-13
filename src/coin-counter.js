@@ -1,32 +1,29 @@
-// export class CoinCounter {
-const coins = [25, 10, 5, 1];
-
-
-
-function CoinCounter(amount) {
+export function CoinCounter(amount) { // amount = 1.25
+  let newAmount = amount * 100; // amount = 125
   let result = [];
-  let index = 0;
-  let newAmount = amount;
-  function countQuarters() {
-    let quarters = newAmount / 25;
-    let newAmount = newAmount % 25;
-    return function countDimes(newAmount) {
-
+  // let index = 0;
+  function countQuarters(newAmount) {
+    let quarters = newAmount / 25;  //quarters = 5
+    let newAmount = newAmount % 25; //newAmount = 0
+    results.Append(quarters); //result[0] = 5
+    function countDimes(newAmount) {
+      let dimes = newAmount / 10; //dimes = 0
+      let newAmount = newAmount % 10; //
+      results.Append(dimes);
+      function countNickles(newAmount) {
+        let nickels = newAmount / 5;
+        let newAmount = newAmount % 5;
+        results.Append(nickels);
+        function countPennies(newAmount) {
+          let pennies = newAmount / 1;
+          let newAmount = newAmount % 1;
+          result.Append(pennies);
+        }
+      }
     }
   }
-  function countDimes(newAmount) {
-    let dimes = countQuarters();
-    return
-  }
-  function countNickle() {
-    return
-  }
-  function countPennies() {
-    return
-  }
+  return result; // [5,0,0,0]
 }
-}
-//
 
 
 
@@ -34,36 +31,4 @@ function CoinCounter(amount) {
 
 
 
-// public class CoinPurse
-// {
-//   public static List<int> Coins = new List<int>(4) { 500, 100, 25, 10, 5, 1 };
-//   public static List<int> MakeChange(int monies) //monies = 120
-//   {
-//     List<int> results = new List<int>(1);
-//     int index = 0;
-//     int newMonies = monies; //newMonies = 120 
-//     while (newMonies > 0)
-//     {
-//       if (newMonies >= Coins[index])
-//       {
-//         newMonies -= Coins[index]; //newMonies = 20
-//         results.Add(Coins[index]); // add 100 to results 
-//       }
-//       else if (newMonies <= Coins[index])
-//       {
-//         index++;
-//       }
-//       else
-//       {
-//         break;
-//       }
-//     }
-//     return results;
-//   }
-// }
-
-  //array of denom
-  //taking input number
-  //while loop to check if current number is equal to any denom
-  //return total denom array
 

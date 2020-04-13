@@ -1,23 +1,35 @@
-export function CoinCounter(amount) { // amount = 1.25
-  let newAmount = amount * 100; // amount = 125
-  let result = [];
-  // let index = 0;
-  function countQuarters(newAmount) {
-    let quarters = newAmount / 25;  //quarters = 5
-    let newAmount = newAmount % 25; //newAmount = 0
-    results.Append(quarters); //result[0] = 5
-    function countDimes(newAmount) {
-      let dimes = newAmount / 10; //dimes = 0
-      let newAmount = newAmount % 10; //
-      results.Append(dimes);
-      function countNickles(newAmount) {
-        let nickels = newAmount / 5;
-        let newAmount = newAmount % 5;
-        results.Append(nickels);
-        function countPennies(newAmount) {
-          let pennies = newAmount / 1;
-          let newAmount = newAmount % 1;
-          result.Append(pennies);
+
+function CoinCounter(amount) { // amount = 1.25
+  const newAmount = amount * 100; // amount = 125
+  console.log(newAmount);
+  const result = [];
+  // const index = 0;
+  // return newAmount;
+  // rcountQuarters(newAmount);
+  return function countQuarters(newAmount) {
+    const quarters = newAmount / 25;  //quarters = 5
+    const newQuarters = newAmount % 25; //newAmount = 0
+    console.log("newQuarters:", newQuarters);
+    console.log("quarters:", quarters);
+    result.push(quarters);
+    console.log("result", result);
+    return function countDimes(newQuarters) {
+      const dimes = newQuarters / 10; //dimes = 0
+      const newDimes = newAmount % 10; //
+      console.log("newDimes", newDimes);
+      result.push(dimes);
+      console.log("result", result);
+      return function countNickles(newDimes) {
+        const nickels = newDimes / 5;
+        const newPennies = newAmount % 5;
+        result.push(nickels);
+        console.log("result", result);
+        return function countPennies(newPennies) {
+          // const pennies = newAmount / 1;
+          // const newAmount = newAmount % 1;
+          result.push(newPennies);
+          console.log("result", result);
+          return result;
         }
       }
     }
@@ -26,7 +38,13 @@ export function CoinCounter(amount) { // amount = 1.25
 }
 
 
+CoinCounter(1.25)(125)(0)(0)(0);
 
+const quarters = CoinCounter(1.25);
+const dimes = quarters(125);
+const nickles = dimes(0);
+const pennies = nickles(0);
+const returnArray = pennies(0);
 
 
 
